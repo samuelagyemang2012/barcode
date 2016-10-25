@@ -35,24 +35,81 @@ var app = {
     onDeviceReady: function () {
         //app.receivedEvent('deviceready');
 
-        //alert("yes");
-
+        //decode function
         $(function () {
             "use strict";
-            $("#scanner").click(function () {
+            $("#decode").click(function () {
                 //alert("clicked");
                 cordova.plugins.barcodeScanner.scan(
                     function (result) {
                         alert("Information: " + result.text + "\n" +
-                            "Format: " + result.format + "\n" +
-                            "Cancelled: " + result.cancelled + "\n");
+                            "Format: " + result.format + "\n");
                     },
                     function (error) {
                         alert(error);
                     }
                 );
+                //end
             });
         });
+        //end
+
+        //encode text function
+        $(function () {
+            "use strict";
+            var theText;
+
+            $("#encodeText").click(function () {
+                theText = $('#text').val();
+                //alert(theText);
+                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, theText, function (success) {
+                        alert("encode success: " + success);
+                    }, function (fail) {
+                        alert("encoding failed: " + fail);
+                    }
+                );
+                //end
+            });
+        });
+        //end
+
+        //encode email function
+        $(function () {
+            "use strict";
+            var theEmail;
+
+            $("#encodeEmail").click(function () {
+                theEmail = $('#email').val();
+                //alert(theText);
+                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.EMAIL_TYPE, theEmail, function (success) {
+                        alert("encode success: " + success);
+                    }, function (fail) {
+                        alert("encoding failed: " + fail);
+                    }
+                );
+                //end
+            });
+        });
+        //end
+
+        //encode phone function
+        $(function () {
+            "use strict";
+            var theEmail;
+
+            $("#encodeEmail").click(function () {
+                theEmail = $('#email').val();
+                //alert(theText);
+                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.EMAIL_TYPE, theEmail, function (success) {
+                        alert("encode success: " + success);
+                    }, function (fail) {
+                        alert("encoding failed: " + fail);
+                    }
+                );
+                //end
+            });
+        });
+        //    end
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
