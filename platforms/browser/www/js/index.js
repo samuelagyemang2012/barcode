@@ -54,80 +54,31 @@ var app = {
         });
         //end
 
-        //encode text function
-        $(function () {
-            "use strict";
-            var theText;
+        var c = function (pos) {
+            var lat = pos.coords.latitude,
+                long = pos.coords.longitude,
+                coords = lat + ', ' + long;
 
-            $("#encodeText").click(function () {
-                theText = $('#text').val();
-                //alert(theText);
-                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, theText, function (success) {
-                        alert("encode success: " + success);
-                    }, function (fail) {
-                        alert("encoding failed: " + fail);
-                    }
-                );
-                //end
-            });
-        });
+        documen.getElementById('google-map').setAttribute('src','http://maps.google.co.uk?q='+coords+'&z=60&output=embed');
+
+        }
+
+        //encode text function
+        document.getElementById("getloc").onclick = function () {
+            navigator.geolocation.getCurrentPosition(c);
+            return false;
+        }
         //end
 
         //encode email function
-        $(function () {
-            "use strict";
-            var theEmail;
 
-            $("#encodeEmail").click(function () {
-                theEmail = $('#email').val();
-                //alert(theText);
-                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.EMAIL_TYPE, theEmail, function (success) {
-                        alert("encode success: " + success);
-                    }, function (fail) {
-                        alert("encoding failed: " + fail);
-                    }
-                );
-                //end
-            });
-        });
         //end
 
         //encode phone function
-        $(function () {
-            "use strict";
-            var theEmail;
 
-            $("#encodeEmail").click(function () {
-                theEmail = $('#email').val();
-                //alert(theText);
-                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.PHONE_TYPE, theEmail, function (success) {
-                        alert("encode success: " + success);
-                    }, function (fail) {
-                        alert("encoding failed: " + fail);
-                    }
-                );
-                //end
-            });
-        });
         //    end
 
-        //geo
-        function onSuccess(position) {
-            var element = document.getElementById('geolocation');
-            element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
-                'Longitude: ' + position.coords.longitude     + '<br />' +
-                '<hr />'      + element.innerHTML;
-        }
-        //
 
-        function onError(error) {
-            alert('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
-        }
-
-        $(function (){
-
-        })
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {

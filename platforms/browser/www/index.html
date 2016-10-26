@@ -89,15 +89,11 @@
             <br>
 
             <a data-transition="slide" class="ui-btn ui-btn-icon-left" style="color: #03A9F4" id="geo"
-               href="">
+               href="#geopage">
                 <i class="zmdi zmdi-globe"></i> geolocation
             </a>
             <br>
         </div>
-    </div>
-
-    <div data-role="content" id="geolocation">
-
     </div>
 </div>
 <!--End of Page 1-->
@@ -132,188 +128,39 @@
     </div>
 </div>
 <!--End of Page 2-->
-
-<!--Encode page-->
-<div data-role="page" id="encodePage">
-
-    <!--header-->
-    <div data-role="header" style="background-color: #03A9F4">
-        <h1></h1>
-        <a href="#landingPage" class="ui-btn ui-btn-icon-right" data-transition="flip">
-            <i class="zmdi zmdi-home"></i>
-        </a>
-    </div>
-    <!--header-->
-
-    <!--content-->
+<div data-role="page" id="geopage">
     <div data-role="content">
-        <div class="container">
-
+        <div id="map">
             <div class="row">
-                <!--button-->
-                <div class="col-xs">
-                    <a class="tile" data-role="button" data-transition="slide" href="#textPage"
-                       style="color: #03A9F4; border-radius: 0px; background-color: #ffffff">
-                        <i class="zmdi zmdi-file-text"></i> text
-                    </a>
-                </div>
-
-                <!--button-->
-                <div class="col-xs">
-                    <a class="tile" data-role="button" data-transition="slide" href="#emailPage"
-                       style="color: #03A9F4; border-radius: 0px; background-color: #ffffff">
-                        <i class="zmdi zmdi-account-box-mail"></i> email
-                    </a>
+                <div class="col-xs-12">
+                    <div class="align-center">
+                        <iframe width="300" height="300" frameborder="0" id="google-map"
+                                src="http://maps.google.co.uk?output=embed"></iframe>
+                    </div>
                 </div>
             </div>
-            <!--button-->
-            <br>
-
-            <!--button-->
-            <div class="row">
-                <div class="col-xs">
-                    <a class="tile" data-role="button" data-transition="slide" href="#phonePage"
-                       style="color: #03A9F4; border-radius: 0px; background-color: #fff">
-                        <i class="zmdi zmdi-phone"></i> phone
-                    </a>
-                </div>
-
-                <div class="col-xs">
-                    <a class="tile" data-role="button" data-transition="slide" href="#smsPage"
-                       style="color: #03A9F4; border-radius: 0px; background-color: #ffffff">
-                        <i class="zmdi zmdi-email"></i> sms
-                    </a>
-                </div>
-            </div>
-            <!--button-->
         </div>
-        <br>
 
-        <!--back button-->
-        <a href="#page2" data-direction="reverse" data-transition="slide" class="ui-btn-icon-left"
-           data-role="button"
-           style="color: #ffffff; background-color: #03A9F4">back
+        <a data-transition="slide" class="ui-btn ui-btn-icon-left" style="color: #03A9F4" id="getloc"
+           href="#geopage">
+            <i class="zmdi zmdi-globe"></i> get my location
         </a>
-        <!--back button-->
     </div>
+
 </div>
-<!--End of Encode page-->
+<!--Encode page-->
+
 
 <!--Encode Text page-->
-<div data-role="page" id="textPage">
 
-    <!--header-->
-    <div data-role="header" style="background-color: #03A9F4">
-        <h1></h1>
-        <a href="#landingPage" class="ui-btn ui-btn-icon-right" data-transition="flip">
-            <i class="zmdi zmdi-home"></i>
-        </a>
-    </div>
-
-    <div data-role="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs">
-                    <input type="text" id="text" placeholder="Enter text here">
-                </div>
-            </div>
-            <br>
-
-            <div class="row">
-                <div class="col-xs">
-                    <a href="#encodePage" data-direction="reverse" data-transition="slide" class="ui-btn-icon-left"
-                       data-role="button"
-                       style="color: #ffffff; background-color: #03A9F4">back
-                    </a>
-                </div>
-                <div class="col-xs">
-                    <a class="ui-btn-icon-left" data-role="button" style="color: #ffffff; background-color: #03A9F4"
-                       id="encodeText"> next
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--end Textpage-->
 
 <!--Encode Email page-->
-<div data-role="page" id="emailPage">
 
-    <!--header-->
-    <div data-role="header" style="background-color: #03A9F4">
-        <h1></h1>
-        <a href="#landingPage" class="ui-btn ui-btn-icon-right" data-transition="flip">
-            <i class="zmdi zmdi-home"></i>
-        </a>
-    </div>
-
-    <div data-role="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs">
-                    <input type="email" id="email" placeholder="Enter email here" required>
-                </div>
-            </div>
-            <br>
-
-            <div class="row">
-                <div class="col-xs">
-                    <a href="#encodePage" data-direction="reverse" data-transition="slide" class="ui-btn-icon-left"
-                       data-role="button"
-                       style="color: #ffffff; background-color: #03A9F4"> back
-                    </a>
-                </div>
-                <div class="col-xs">
-                    <a class="ui-btn-icon-left" data-role="button" style="color: #ffffff; background-color: #03A9F4"
-                       id="encodeEmail"> next
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--end Emailpage-->
 
 <!--Encode Phone page-->
-<div data-role="page" id="phonePage">
 
-    <!--header-->
-    <div data-role="header" style="background-color: #03A9F4">
-        <h1></h1>
-        <a href="#landingPage" class="ui-btn ui-btn-icon-right" data-transition="flip">
-            <i class="zmdi zmdi-home"></i>
-        </a>
-    </div>
-
-    <div data-role="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs">
-                    <input type="tel" id="phone" placeholder="Enter phone number here" required>
-                </div>
-            </div>
-            <br>
-
-            <div class="row">
-                <div class="col-xs">
-                    <a href="#encodePage" data-direction="reverse" data-transition="slide" class="ui-btn-icon-left"
-                       data-role="button"
-                       style="color: #ffffff; background-color: #03A9F4">
-                        <i class="zmdi zmdi-blur"></i>back
-                    </a>
-                </div>
-
-                <div class="col-xs">
-                    <a class="ui-btn-icon-left" data-role="button" style="color: #ffffff; background-color: #03A9F4"
-                       id="encodePhone">
-                        <i class="zmdi zmdi-blur"></i>next
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--end Phonepage-->
 
 <script type="text/javascript" src="cordova.js"></script>
