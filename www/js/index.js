@@ -100,7 +100,7 @@ var app = {
             $("#encodeEmail").click(function () {
                 theEmail = $('#email').val();
                 //alert(theText);
-                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.EMAIL_TYPE, theEmail, function (success) {
+                cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.PHONE_TYPE, theEmail, function (success) {
                         alert("encode success: " + success);
                     }, function (fail) {
                         alert("encoding failed: " + fail);
@@ -110,6 +110,24 @@ var app = {
             });
         });
         //    end
+
+        //geo
+        function onSuccess(position) {
+            var element = document.getElementById('geolocation');
+            element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+                'Longitude: ' + position.coords.longitude     + '<br />' +
+                '<hr />'      + element.innerHTML;
+        }
+        //
+
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+        }
+
+        $(function (){
+
+        })
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
