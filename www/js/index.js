@@ -59,7 +59,7 @@ var app = {
                 long = pos.coords.longitude,
                 coords = lat + ', ' + long;
 
-        documen.getElementById('google-map').setAttribute('src','http://maps.google.co.uk?q='+coords+'&z=60&output=embed');
+        document.getElementById('google-map').setAttribute('src','http://maps.google.co.uk?q='+coords+'&z=60&output=embed');
 
         }
 
