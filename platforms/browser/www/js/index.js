@@ -35,8 +35,8 @@ var app = {
 
     onDeviceReady: function () {
         //app.receivedEvent('deviceready');
-        pictureSource = navigator.camera.PictureSourceType;
-        destinationType = navigator.camera.DestinationType;
+        //pictureSource = navigator.camera.PictureSourceType;
+        //destinationType = navigator.camera.DestinationType;
         //decode function
         $(function () {
             "use strict";
@@ -72,13 +72,13 @@ var app = {
         }
         //end
 
-        document.getElementById("camera").onclick = function () {
-            navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-                quality: 50,
-
-                destinationType: destinationType.DATA_URL
-            });
-        }
+        //document.getElementById("camera").onclick = function () {
+        //    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+        //        quality: 50,
+        //
+        //        destinationType: destinationType.DATA_URL
+        //    });
+        //}
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
