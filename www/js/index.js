@@ -32,9 +32,11 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
+
     onDeviceReady: function () {
         //app.receivedEvent('deviceready');
-
+        pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
         //decode function
         $(function () {
             "use strict";
@@ -59,26 +61,24 @@ var app = {
                 long = pos.coords.longitude,
                 coords = lat + ', ' + long;
 
-        document.getElementById('google-map').setAttribute('src','http://maps.google.co.uk?q='+coords+'&z=60&output=embed');
+            document.getElementById('google-map').setAttribute('src', 'http://maps.google.co.uk?q=' + coords + '&z=60&output=embed');
 
         }
 
-        //encode text function
+        //get location function
         document.getElementById("getloc").onclick = function () {
             navigator.geolocation.getCurrentPosition(c);
             return false;
         }
         //end
 
-        //encode email function
+        document.getElementById("camera").onclick = function () {
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+                quality: 50,
 
-        //end
-
-        //encode phone function
-
-        //    end
-
-
+                destinationType: destinationType.DATA_URL
+            });
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
