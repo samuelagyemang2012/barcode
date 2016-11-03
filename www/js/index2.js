@@ -15,8 +15,8 @@
         document.getElementById("camera").onclick = function () {
             navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
                 quality: 50,
-
-                destinationType: destinationType.DATA_URL
+                destinationType: destinationType.DATA_URL,
+                saveToPhotoAlbum: true
             });
         }
 
